@@ -11,13 +11,6 @@
 <!--link za slide za zakazivanje sastanka-->
 <?php include "includes/create_meeting.php";?>    
 
-            
-                        
-<!--unos zakazivanja sastanka u bazu-->                   
-<?php include "includes/functions.php";?>     
-<?php createMeeting(); ?>
- 
-  
 
 <?php include "includes/pr_and_communications.php";?> 
 
