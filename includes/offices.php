@@ -9,62 +9,21 @@
         </ul>
         
         <div class="offices_galery">
+           <?php 
+            $query = "SELECT * FROM offices WHERE offices_continent = 'EMEA'";
+            $query_offices = mysqli_query($connection, $query);
+            
+           while($row = mysqli_fetch_assoc($query_offices)){
+               $offices_image = $row['offices_image'];
+               $offices_image_name = $row['offices_image_name'];
+
+            ?>
            <div class="offices_slides">
-            <img src="Fotke offices/U boji/podgorica.png" alt="podgorica">
-            <div class="offices_image_text">podgorica</div>
+            <img src="Fotke offices/<?php echo $offices_image ;?>" alt="<?php echo $offices_image_name ;?>">
+            <div class="offices_image_text"><?php echo $offices_image_name ;?></div>
             </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/belgrade.png" alt="">
-            <div class="offices_image_text">belgrade</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/brussels.png" alt="">
-            <div class="offices_image_text">brussels</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/bucharest.png" alt="">
-            <div class="offices_image_text">bucharest</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/dubai.png" alt="">
-            <div class="offices_image_text">dubai</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/hamburg.png" alt="">
-            <div class="offices_image_text">hamburg</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/istanbul.png" alt="">
-            <div class="offices_image_text">istanbul</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/london.png" alt="">
-            <div class="offices_image_text">london</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/madrid.png" alt="">
-            <div class="offices_image_text">madrid</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/milano.png" alt="">
-            <div class="offices_image_text">milano</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/moscow.png" alt="">
-            <div class="offices_image_text">moscow</div>
-            </div>
-             <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/paris.png" alt="">
-            <div class="offices_image_text">paris</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/riga.png" alt="">
-            <div class="offices_image_text">riga</div>
-            </div>
-            <div class="offices_slides">
-            <img src="Fotke offices/crno-bijelo/stockholm.png" alt="">
-            <div class="offices_image_text">stockholm</div>
-            </div>
+            
+            <?php } ?>
         </div>
         </div>
         <div class="blank"></div>       
