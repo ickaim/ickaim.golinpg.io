@@ -265,8 +265,8 @@ body {
     font-weight: bolder;
     line-height: 1.048;
     text-align: left;
-    padding: 10px 15px 10px 30px;
-    width: 350px;
+    padding: 10px 15px 10px 20px;
+    width: 340px;
     
 }
 
@@ -276,14 +276,14 @@ body {
     color: black;
     font-weight: light;
     text-align: left;
-    padding: 0px 0px 5px 30px;
+    padding: 0px 0px 5px 20px;
     width: 400px;
 }
 
 .pr_image1 img{
     position: absolute;
     top: -35px;
-    left: 51%;
+    left: 53%;
     right: 17%;
     width: 540px;   
 }
@@ -291,14 +291,14 @@ body {
 .pr_image2 img {
     position: absolute;
     top: 320px;
-    left: 20%;
-    width: 505px;
+    left: 18%;
+    width: 500px;
 }
 
 .ev_man {
     position: absolute;
     top: 350px;
-    left: 55%;
+    left: 57%;
 }
 
 
@@ -349,6 +349,16 @@ body {
     position: relative;
     text-align: left;
     color: white;
+}
+
+.galery_slides::after {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+    margin-top: -150px;
+    height: 150px;
+    width: 100%;
+    content: '';
 }
 
 .image_text{
@@ -514,6 +524,17 @@ body {
     text-align: left;
     color: white;
 }
+
+.offices_slides::after{
+    display: block;
+    position: relative;
+    background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+    margin-top: -150px;
+    height: 150px;
+    width: 100%;
+    content: '';
+}
+
 
 .offices_image_text {
     font-size: 12px;
