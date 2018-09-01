@@ -45,7 +45,35 @@
                         document.getElementById("zakazi_sastanak").style.display = "none";
                     }
                 </script>
-       
+         <?php 
+    
+            if(isset($_POST['submit'])){
+            global $connection;
+            $meeting_name = $_POST['name'];
+            $meeting_firma = $_POST['firma'];
+            $meeting_email = $_POST['email'];
+            $meeting_telefon = $_POST['telefon'];
+            $meeting_date = $_POST['date'];
+            $meeting_time = $_POST['time'];
+
+            $query = "INSERT INTO meetings(meeting_name,meeting_firma,meeting_email,meeting_telefon,meeting_date,meeting_time,meeting_status)";
+            $query .= "VALUES('{$meeting_name}','{$meeting_firma}','{$meeting_email}','{$meeting_telefon}','{$meeting_date}','{$meeting_time}','for approval')";
+            $result = mysqli_query($connection,$query);
+
+                if(!$result){
+                    die("Fail!") . mysqli_error($connection);
+                }
+
+            $to = "ickaim@gmail.com";
+            $subject = "My subject";
+            $txt = "Hello world!";
+            $headers = "From: ickaim@gmail.com";
+
+            mail($to,$subject,$txt,$headers);
+
+    
+            }
+     ?>
        
         </div>
         <div class="blank"></div>
