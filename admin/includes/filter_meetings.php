@@ -16,11 +16,10 @@
             $end_date = $_POST['end_date'];
             $end_time = $_POST['end_time'];
         }
-
-        $query = "SELECT * FROM meetings WHERE meeting_date BETWEEN '{$begin_date}' AND '{$end_date}' ";
+ 
+        $query = "SELECT * FROM meetings WHERE (meeting_date BETWEEN '{$begin_date}' AND '{$end_date}') AND (meeting_time BETWEEN '{$begin_time}' AND '{$end_time}') ";
         $select_meetings = mysqli_query($connection, $query);
-        $count = mysqli_num_rows($select_meetings);
-        if($count == 0){
+        if(!$select_meetings || mysqli_num_rows($select_meetings) == 0){
             echo "no result";
         } else { ?>
 
