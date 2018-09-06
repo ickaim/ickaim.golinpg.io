@@ -46,24 +46,37 @@
 
             <li style="float:left;"><img src="Logo GolinPG.svg" alt="GolinPG"></li>
         </ul>
-
-
-
-       <div class="login" id="login">
-            <form action="includes/login.php" method="post">
+        
+       <div id="login" class="login">
+            <span onclick="close()" class="close" title="Close">&times;</span>
+            <form class="login_form" action="includes/login.php" method="post">
+               <div class="login_content">
+                <a href="index.php"><img src="Pop up - zakazi sastanak/x ikonica.svg" alt="close" id="close"></a>
                 <img src="Logo GolinPG.svg" alt="GolinPG">
                 <input type="username" placeholder="Username" name="username" required>
                 <input type="password" placeholder="Password" name="password" required>
-                <button type="submit" name="login" onclick="closeLogin()" class="btnLogin">LOGIN</button>      
+                <button type="submit" name="login" onclick="closeLogin()" class="btnLogin">LOGIN</button> 
+                </div>      
             </form>    
-        </div>
+        </div></div></div>
 
         <script>
             function openLogin(){
                 document.getElementById("login").style.display = "block";
+
             }
             function closeLogin(){
                 document.getElementById("login").style.display = "none";
+            }
+            function close(){
+                document.getElementById("login").style.display = "none";
+            }
+            var modal = document.getElementById("login");
+
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                modal.style.display = "none";
+                }
             }
         </script>
 
