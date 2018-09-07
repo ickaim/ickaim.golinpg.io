@@ -35,7 +35,7 @@
         echo "<td>$user_firstname</td>";
         echo "<td>$user_lastname</td>";
         echo "<td>$user_email</td>"; 
-        echo "<td>$user_image</td>";
+        echo "<td><img width='100px' src='../Fotke user/$user_image' alt='image'></td>";
         echo "<td>$user_role</td>";
        
         echo "<td><a href='users.php?change_to_admin=$user_id'>Admin</a></td>";
