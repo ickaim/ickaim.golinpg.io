@@ -85,10 +85,10 @@ function openOffice(pageName,elmnt) {
     }
     tablinks = document.getElementsByClassName("filter_office");
     for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].remove.className = "offices_active";
+        tablinks[i].className = tablinks[i].className.replace("offices_active","");
     }
     document.getElementById(pageName).style.display = "block";
-    elmnt.addClass = "offices_active";
+    elmnt.className = "offices_active";
     
 }
     document.getElementById("defaultOpen").click();
