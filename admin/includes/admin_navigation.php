@@ -57,6 +57,9 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="slide_meeting.php" style="color: black;font-weight: bold;"><i class="fa fa-fw fa-dashboard"></i> Slide meeting </a>
+                    </li>
+                    <li>
                         <a href="pr_and_event.php" style="color: black;font-weight: bold;"><i class="fa fa-fw fa-dashboard"></i> PR and event </a>
                     </li>
                      <li>
