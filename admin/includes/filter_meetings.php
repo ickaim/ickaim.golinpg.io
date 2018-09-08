@@ -1,4 +1,4 @@
-<div class="filter_meeting">
+ <div class="filter_meeting">
    <form action="" method="post">
     <p>Od:</p>
     <input type="date" name="begin_date">
@@ -7,7 +7,9 @@
     <input type="date" name="end_date">
     <input type="time" name="end_time">
     <button type="submit" class="btn" name="filter">Filter</button>
-</form></div><br>
+    <button type="submit" class="btn" name="print" onclick="printThis()">Print</button>
+</form></div><br>    
+
 <?php 
         
         if(isset($_POST['filter'])){
@@ -16,7 +18,7 @@
             $end_date = $_POST['end_date'];
             $end_time = $_POST['end_time'];
         }
- 
+
         $query = "SELECT * FROM meetings WHERE (meeting_date BETWEEN '{$begin_date}' AND '{$end_date}') AND (meeting_time BETWEEN '{$begin_time}' AND '{$end_time}') ";
         $select_meetings = mysqli_query($connection, $query);
         if(!$select_meetings || mysqli_num_rows($select_meetings) == 0){
@@ -73,7 +75,7 @@
 
     </tbody>
 </table>
-                    
+               
                     
 <?php 
 
@@ -101,5 +103,10 @@ if(isset($_GET['delete'])){
     header("Location: meeting.php");
 }
 
-
 ?>
+
+<script>
+  function printThis() {
+    window.print();
+}  
+</script>
